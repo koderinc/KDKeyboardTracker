@@ -1,3 +1,3 @@
-struct KDKeyboardTracker {
+struct PackageLibrary {
     var text = "Hello, World!"
 }
