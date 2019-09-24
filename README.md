@@ -149,5 +149,5 @@ Open the Xcode workspace in the Example project to see how we've set things up.
 
 ## License
 
-KDKeyboardTracker is released under the MIT license. See ![LICENSE](LICENSE) for details.
+KDKeyboardTracker is released under the MIT license. See [LICENSE](LICENSE) for details.
 
