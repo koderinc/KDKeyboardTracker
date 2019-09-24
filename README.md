@@ -2,7 +2,10 @@
 
 By default, iOS allows you to monitor changes to the keyboard via NSNotifications. However, once you need to stick a view to the top of the keyboard and support interative dismiss, things get more involved. 
 
-This package is heavily inspired by [this artical](https://medium.com/ios-os-x-development/a-stickler-for-details-implementing-sticky-input-fields-in-ios-f88553d36dab) and the resulting [Objective-C repo](https://github.com/meiwin/NgKeyboardTracker).
+This package is heavily inspired by [this article](https://medium.com/ios-os-x-development/a-stickler-for-details-implementing-sticky-input-fields-in-ios-f88553d36dab) and the resulting [Objective-C repo](https://github.com/meiwin/NgKeyboardTracker).
+
+
+![](Docs/Assets/Demo.gif)
 
 ---
 
@@ -28,23 +31,22 @@ Adding your controller to the Keyboard tracker's observers, will automatically b
 
 ```
 func keyboardTrackerDidUpdate(tracker: KeyboardTracker) {
-        // upserver 
+    // observe frame changes 
 }
     
 func keyboardTrackerDidChangeAppearanceState(tracker: KeyboardTracker) {
-        switch tracker.appearanceState {
-        case .undefined:
-            break
-        case .willShow:
-            break
-        case .willHide:
-            break
-        case .shown:
-            break
-        case .hidden:
-            break
-        }
-
+    switch tracker.appearanceState {
+    case .undefined:
+        break
+    case .willShow:
+        break
+    case .willHide:
+        break
+    case .shown:
+        break
+    case .hidden:
+        break
+    }
 }
 ```
 #### Observering Interactive Dismissal
@@ -55,14 +57,14 @@ To enable tracking, you must override the `loadView()` of your controller and se
 
 Override `loadView()` in your controller:
 ```
-    override func loadView() {
-        let view = CustomView(frame: UIScreen.main.bounds)
-        view.becomeFirstResponder()
-        self.view = view
-    }
+override func loadView() {
+    let view = CustomView(frame: UIScreen.main.bounds)
+    view.becomeFirstResponder()
+    self.view = view
+}
 ```
 
-Custom `UIView`:
+Example custom `UIView`:
 ```
 class CustomView: UIView {
     

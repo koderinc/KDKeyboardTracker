@@ -170,7 +170,9 @@ open class KeyboardTracker: NSObject, PseudoInputAccessoryViewCoordinatorDelegat
     }
     
     @objc func keyboardDidShow(notification: Notification) {
-        updateAppearanceState(.shown)
+        // when we use the interactive input accessory, a shown notification gets fired after it hide
+        // check to make sure the keyboard is actually visable before setting it as shown
+        updateAppearanceState(isKeyboardVisible ? .shown : .hidden)
     }
     
     @objc func keyboardDidHide(notification: Notification) {
@@ -224,6 +226,7 @@ extension KeyboardTracker {
     
     /// Add a keyboard observer that subscribes to keyboard changes and events
     open func addObserver(keyboardObserver: KeyboardObserver) {
+        removeObserver(keyboardObserver: keyboardObserver)
         observers.append(keyboardObserver)
     }
     
