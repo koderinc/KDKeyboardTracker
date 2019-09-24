@@ -1,5 +1,7 @@
 # KDKeyboardTracker
 
+![](https://img.shields.io/badge/Swift-5.1-Orange) ![](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen) [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
+
 By default, iOS allows you to monitor changes to the keyboard via NSNotifications. However, once you need to stick a view to the top of the keyboard and support interative dismiss, things get more involved. 
 
 This package is heavily inspired by [this article](https://medium.com/ios-os-x-development/a-stickler-for-details-implementing-sticky-input-fields-in-ios-f88553d36dab) and the resulting [Objective-C repo](https://github.com/meiwin/NgKeyboardTracker).
@@ -147,5 +149,5 @@ Open the Xcode workspace in the Example project to see how we've set things up.
 
 ## License
 
-KDKeyboardTracker is released under the MIT license. See LICENSE for details.
+KDKeyboardTracker is released under the MIT license. See ![LICENSE](LICENSE) for details.
 
