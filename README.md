@@ -1,6 +1,6 @@
 # KDKeyboardTracker
 
-![](https://img.shields.io/badge/Swift-5.1-Orange) ![](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen) [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
+![](https://img.shields.io/badge/Swift-5.1-Orange) ![](https://img.shields.io/badge/SPM-compatible-brightgreen) [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
 
 By default, iOS allows you to monitor changes to the keyboard via NSNotifications. However, once you need to stick a view to the top of the keyboard and support interative dismiss, things get more involved. 
 
@@ -19,7 +19,7 @@ A common use case of the keyboard tracker is monitoring keyboard state changes i
 
 A good method for this would be in the view controller's `willMove(toParent:)` method. 
 
-```
+```swift
 override func willMove(toParent parent: UIViewController?) {
     super.willMove(toParent: parent)
     if parent != nil {
@@ -31,7 +31,7 @@ override func willMove(toParent parent: UIViewController?) {
 ```
 Adding your controller to the Keyboard tracker's observers, will automatically begin generating updates for keyboard changes. When all observers are removed from the tracker, the tracker stops observing changes.
 
-```
+```swift
 func keyboardTrackerDidUpdate(tracker: KeyboardTracker) {
     // observe frame changes 
 }
@@ -58,7 +58,7 @@ KeyboardTracker uses `PseudoInputAccessoryViewCoordinator` to track interactive 
 To enable tracking, you must override the `loadView()` of your controller and set the view to a custom view.
 
 Override `loadView()` in your controller:
-```
+```swift
 override func loadView() {
     let view = CustomView(frame: UIScreen.main.bounds)
     view.becomeFirstResponder()
@@ -67,7 +67,7 @@ override func loadView() {
 ```
 
 Example custom `UIView`:
-```
+```swift
 class CustomView: UIView {
     
     var inputCoordinator: PseudoInputAccessoryViewCoordinator!
@@ -102,17 +102,15 @@ Check out the sample app in this repo to try out the features above.
 
 ##### Add KDKeyboardTracker to your Package.swift file
 
-```
-.package(url: /* package url */, from: "1.0.0"),
+```swift
+.package(url: "https://github.com/koderinc/KDKeyboardTracker.git", from: "1.0.0"),
 ```
 
-Be sure to expose `KDKeyboardTracker` as a dependency in the targets as well.
+Be sure to expose `KDKeyboardTracker` as a dependency in the targets where you plan to use it.
 
-```
+```swift
 import KDKeyboardTracker
 ```
-
-where you plan to use it.
 
 If you are new to Swift Package Manager, here's how you can set up your project:
 
@@ -136,11 +134,11 @@ Once you create your workspace, add your Xcode project to it.
 1. Open the Package.swift file
 2. Add dependencies in the array:
 
-```
+```swift
 dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    // Dependencies declare other packages that this package depends on.
+    // .package(url: /* package url */, from: "1.0.0"),
+],
 ```
 
 Open the Xcode workspace in the Example project to see how we've set things up.
@@ -149,5 +147,5 @@ Open the Xcode workspace in the Example project to see how we've set things up.
 
 ## License
 
-KDKeyboardTracker is released under the MIT license. See ![LICENSE](LICENSE) for details.
+KDKeyboardTracker is released under the MIT license. See [LICENSE](LICENSE) for details.
 
