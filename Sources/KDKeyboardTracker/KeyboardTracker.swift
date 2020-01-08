@@ -40,6 +40,7 @@ open class KeyboardTracker: NSObject, PseudoInputAccessoryViewCoordinatorDelegat
     open private(set) var beginFrame: CGRect = .zero
     open private(set) var endFrame: CGRect = .zero
     open private(set) var currentFrame: CGRect = .zero
+    open private(set) var windowSize: CGSize = .zero
 
     // Animation
     open private(set) var animationDuration: TimeInterval = .zero
@@ -93,6 +94,7 @@ open class KeyboardTracker: NSObject, PseudoInputAccessoryViewCoordinatorDelegat
         notifications.forEach {
             NotificationCenter.default.addObserver(self, selector: $0.1, name: $0.0, object: nil)
         }
+        getInitialKeyboardInfo()
     }
     
     /// End keyboard tracking.
@@ -107,6 +109,7 @@ open class KeyboardTracker: NSObject, PseudoInputAccessoryViewCoordinatorDelegat
             return nil
         }
         let testWindow = windows[1]
+        windowSize = testWindow.bounds.size
         for subview in testWindow.subviews {
             if subview.description.contains(TestWindowKeys.peripheralHostKey) {
                 return subview
