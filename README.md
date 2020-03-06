@@ -51,7 +51,7 @@ func keyboardTrackerDidChangeAppearanceState(tracker: KeyboardTracker) {
     }
 }
 ```
-#### Observering Interactive Dismissal
+#### Observing Interactive Dismissal
 
 KeyboardTracker uses `PseudoInputAccessoryViewCoordinator` to track interactive keyboard dismissal. 
 
@@ -98,50 +98,22 @@ Check out the sample app in this repo to try out the features above.
 
 ---
 
-### Installing the package
+### Installation
 
-##### Add KDKeyboardTracker to your Package.swift file
+Xcode makes it easy to add Swift Packages to your project. 
 
-```swift
-.package(url: "https://github.com/koderinc/KDKeyboardTracker.git", from: "1.0.0"),
-```
+Ensure your target is selected and navigate to the General tab of your application's bundle.
 
-Be sure to expose `KDKeyboardTracker` as a dependency in the targets where you plan to use it.
+In the Frameworks, Libraries, and Embedded Content section, click the '+' button to add a new dependency. 
 
-```swift
-import KDKeyboardTracker
-```
+Select the "Add Other..." dropdown and choose "Add Package Dependency" enter the package url:
+https://github.com/koderinc/KDKeyboardTracker.git
 
-If you are new to Swift Package Manager, here's how you can set up your project:
+Continue through the wizard until the package is added.
 
-To take advantage of the modularity that SPM provides, we suggest creating your project in a workspace, and adding your packages there. 
+From here, simply `import KDKeyboardTracker` where needed.
 
-Once you create your workspace, add your Xcode project to it. 
-
-##### Adding a `Package.swift` file to your workspace:
-
-1. Open your workspace
-2. Using the `+` button in the bottom left, select `New Swift Package`
-3. Give it a name like `PackageLibrary` and make sure 'Create Git Repository on my Mac' is unselected as the package will be part of your project's source control
-
-##### Embedding the Swift Package in your project
-
-1. Open your app’s project settings, select your app target, and navigate to its General pane.
-2. Click the `+` button in the “Frameworks, Libraries, and Embedded Content” section and select the package’s library to link it into your app target.
-
-##### Adding 3rd Party Packages
-
-1. Open the Package.swift file
-2. Add dependencies in the array:
-
-```swift
-dependencies: [
-    // Dependencies declare other packages that this package depends on.
-    // .package(url: /* package url */, from: "1.0.0"),
-],
-```
-
-Open the Xcode workspace in the Example project to see how we've set things up.
+For information about adding a Swift Package Dependency to your project, [see Apple's documentation here](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
 ---
 

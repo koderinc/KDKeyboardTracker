@@ -13,7 +13,7 @@
 		28C2A42823316B4B00642F19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2A42623316B4B00642F19 /* Main.storyboard */; };
 		28C2A42A23316B4C00642F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C2A42923316B4C00642F19 /* Assets.xcassets */; };
 		28C2A42D23316B4C00642F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2A42B23316B4C00642F19 /* LaunchScreen.storyboard */; };
-		28C2A4362331700700642F19 /* PackageLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 28C2A4352331700700642F19 /* PackageLibrary */; };
+		28CB77C72412E630002B6C69 /* KDKeyboardTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 28CB77C62412E630002B6C69 /* KDKeyboardTracker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +25,8 @@
 		28C2A42923316B4C00642F19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28C2A42C23316B4C00642F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28C2A42E23316B4C00642F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28CB77C42412E566002B6C69 /* KDKeyboardTracker */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KDKeyboardTracker; path = "/Users/aaronsatterfield/Documents/Koder Projects/Ellen Workspace/KDKeyboardTracker"; sourceTree = "<absolute>"; };
+		28CB77C52412E591002B6C69 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C2A4362331700700642F19 /* PackageLibrary in Frameworks */,
+				28CB77C72412E630002B6C69 /* KDKeyboardTracker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +75,8 @@
 		28C2A4342331700700642F19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28CB77C52412E591002B6C69 /* Package.swift */,
+				28CB77C42412E566002B6C69 /* KDKeyboardTracker */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,7 +98,7 @@
 			);
 			name = "KDKeyboardTracker-Example";
 			packageProductDependencies = (
-				28C2A4352331700700642F19 /* PackageLibrary */,
+				28CB77C62412E630002B6C69 /* KDKeyboardTracker */,
 			);
 			productName = "KDKeyboardTracker-Example";
 			productReference = 28C2A41D23316B4B00642F19 /* KDKeyboardTracker-Example.app */;
@@ -353,9 +357,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		28C2A4352331700700642F19 /* PackageLibrary */ = {
+		28CB77C62412E630002B6C69 /* KDKeyboardTracker */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PackageLibrary;
+			productName = KDKeyboardTracker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
