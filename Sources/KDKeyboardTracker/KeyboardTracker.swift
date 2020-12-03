@@ -256,5 +256,18 @@ extension KeyboardTracker {
         let intersection = UIScreen.main.bounds.intersection(currentFrame)
         return intersection.size.height - inputAccessoryViewHeight > 0
     }
+
+    public func willTransitionToSize(_ size: CGSize) {
+        let willBeVertical = size.height > size.width
+        let longestWindowSize = max(windowSize.width, windowSize.height)
+        let smallestWindowSize = min(windowSize.width, windowSize.height)
+
+        let adjustedWidth = willBeVertical ? smallestWindowSize : longestWindowSize
+        let adjustedHeight = willBeVertical ? longestWindowSize : smallestWindowSize
+
+        let newSize = CGSize(width: adjustedWidth, height: adjustedHeight)
+
+        windowSize = newSize
+    }
     
 }
